@@ -34,7 +34,7 @@ module HamlCoffeeAssets
       self.customSucceed          = 'window.HAML.succeed'
       self.customPrecede          = 'window.HAML.precede'
       self.customReference        = 'window.HAML.reference'
-      self.evaluation_context     = 'assigns.merge(local_assigns).to_json'
+      self.evaluation_context     = 'view_assigns.merge(local_assigns).to_json'
       self.preserveTags           = 'textarea,pre'
       self.selfCloseTags          = 'meta,img,link,br,hr,input,area,param,col,base'
       self.context                = 'window.HAML.context'
