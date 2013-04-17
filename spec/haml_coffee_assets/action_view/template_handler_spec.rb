@@ -23,7 +23,7 @@ describe HamlCoffeeAssets::ActionView::TemplateHandler do
 
   before do
     context.stub(:logger) { }
-    context.stub(:assigns) { Hash.new }
+    context.stub(:view_assigns) { Hash.new }
     HamlCoffeeAssets::GlobalContext.stub(:to_s) { global_context }
   end
 
@@ -51,8 +51,8 @@ describe HamlCoffeeAssets::ActionView::TemplateHandler do
     output.should == "<h1>Foo</h1>"
   end
 
-  it "has access to context assigns" do
-    context.stub(:assigns) { { foo: "Bar" } }
+  it "has access to view assigns" do
+    context.stub(:view_assigns) { { foo: "Bar" } }
     output = new_template("= @foo").render(context, locals)
     output.should == "Bar"
   end
