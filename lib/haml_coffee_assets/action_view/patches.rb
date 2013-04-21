@@ -17,7 +17,7 @@ class ::ActionView::Template
       template = self
 
       # Here's the patch: if the javascript runtime throws an error
-      # during compilation, we get to this handler but our view 
+      # during compilation, we get to this handler but our view
       # doesn't have a lookup_context - thus throwing a very hard
       # to debug error in Template#refresh. To circumvent, ensure the
       # view responds to lookup_context before refreshing.
