@@ -25,7 +25,12 @@ class ::ActionView::Template
         template = refresh(view)
         template.encode!
       end
-      raise ::ActionView::Template::Error.new(template, assigns, e)
+
+      if Rails::VERSION::STRING < "4"
+        raise ::ActionView::Template::Error.new(template, assigns, e)
+      else
+        raise ::ActionView::Template::Error.new(template, e)
+      end
     end
   end
 end
